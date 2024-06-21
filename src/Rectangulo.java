@@ -1,56 +1,40 @@
+public class Rectangulo implements FiguraGeometrica{
+    private String nombre;
+    private double largo;
+    private double ancho;
 
-public class Rectangulo implements FiguraGeometrica {
-	private String nombre;
-	private double base;
-	private double altura;
-	
-	public Rectangulo(String nombre, double base, double altura) {
-		super();
-		this.nombre = nombre;
-		this.base = base;
-		this.altura = altura;
-	}//constructor
-	@Override
-	public String getName() {
-		return this.nombre;
-	}
-	@Override
-	public double calcularPerimetro() {
-		return (getBase()*2) + (getAltura()*2);
-	}// calcularPerimetro
-	@Override
-	public double calcularArea() {
-			return getBase()*getAltura();
-	}//calcularArea
-	public String getNombre() {
-		return nombre;
-	}
+    public Rectangulo(String nombre, double largo, double ancho) {
+        this.nombre = nombre;
+        this.largo = largo;
+        this.ancho = ancho;
+    }//Constructor
 
+    public double calcularArea() {
+        return (largo * ancho);
+    }//calcularArea
+    
+    public double calcularPerimetro() {
+        return (2 * (largo + ancho));
+    }//calcularPerimetro
+    
+    public double getLargo() {
+		return largo;
+	}//getLargo
+	public void setLargo(double largo) {
+		this.largo = largo;
+	}//setLargo
+	public double getAncho() {
+		return ancho;
+	}//getAncho
+	public void setAncho(double ancho) {
+		this.ancho = ancho;
+	}//setAncho
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-
-	public double getBase() {
-		return base;
-	}
-
-	public void setBase(double base) {
-		this.base = base;
-	}
-
-	public double getAltura() {
-		return altura;
-	}
-
-	public void setAltura(double altura) {
-		this.altura = altura;
-	}
+	}//setNombre
 
 	@Override
-	public String toString() {
-		return "Rectangulo [nombre=" + nombre + ", base=" + base + ", altura=" + altura + "]";
-	}//toString
-
-	
-	
+    public String toString() {
+        return "Rectangulo [nombre=" + nombre + ", largo=" + largo + ", ancho=" + ancho + "]";
+    }//toString
 }//class Rectangulo
